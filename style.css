@@ -134,18 +134,18 @@ body {
 #containerBtnsNiveau{
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
-#btnNouvellePartie
+#btnNouvellePartie,
 .btnNiveau {
   margin:5px;
   padding:10px;
-  border:solid 3px gray;
+  border:solid 1px rgb(46, 46, 46);
   border-radius:8px;
   cursor: pointer;
   transition: 0.3s;
   font-size: 16px;
-  font-weight: bold;
   color: rgb(0, 0, 0)
 }
 
@@ -160,10 +160,12 @@ body {
 #containerBtnNouvellePartie {
   display: flex;
   margin-top:15px;
+  width: 100%;
 }
 
 #btnNouvellePartie {
   width: 200px;
+  background-color:rgb(174, 174, 174);
 }
 
 #btnNouvellePartie:hover {
@@ -175,6 +177,7 @@ body {
 }
 
 #bravoBestScore{
+  margin-top:30px;
   text-align: center;
   font-size: 30px;
   color:rgb(0, 116, 10);
@@ -218,7 +221,7 @@ body {
 
 #labelMeilleurScore{
   color: white;
-  font-size:18px;
+  font-size:20px;
   text-align: center;
   margin: 10px;
 
@@ -231,7 +234,6 @@ body {
   border-radius:18px;
   margin-top: 20px;
   font-size: 20px;
-  color:blue;
   text-align: center;
 }
 
@@ -251,30 +253,80 @@ body {
   display: flex;
 }
 
-@media screen and (max-width: 1230px) {
+@media screen and (max-width: 1400px) {
   .grid {
-    display: grid;
-    grid-template-columns: repeat(4, 140px);
-    gap: 10px;
-    margin: 30px auto 0;
-
+    grid-template-columns: repeat(4, 120px);
   }
+}
 
-  #btnNouvellePartie,
-  .btnNiveau,
-  .inputBestScore{
-    padding: 7px;
-    font-size: 14px;
-  }
+  @media screen and (max-width: 1180px) {
+    .grid {
+      grid-template-columns: repeat(4, 100px);
+    }
 
-  .score{
-    margin-top: 30px;
+    #containerBtns{
+      position:relative;
+      left:0;
+      top:0;
+      width:95%;
+      margin-top: 25px;
+    }
 
-  }
+    #containerBtnsNiveau {
+      width:100%;
+      flex-direction: row;
+      justify-content: center;
+    }
 
-  .labelDeBestScore{
-    padding: 7px;
-    font-size:20px;
+    #containerBtnNouvellePartie {
+      justify-content: center;
+    }
+
+    #score {
+      margin-top:10px;
+    }
+
+    #containerInfosScores {
+      width:100%;
+      display: flex;
+      justify-content: space-around;
+      margin-top:10px;
+    }
+
+    #containerBestScore{
+      margin-top: 25px;
+    }
+
+    #containerRappelBestScore {
+      position:relative;
+      top:0;
+      left:0;
+      width: 100%;
+      display: flex;
+      padding:5px;
+      margin-top:10px;
+      margin-bottom:20px;
+      flex-direction: column;
+    }
+    
+    #rappelBestScore{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+
+
+    }
+
+    #bravoBestScore {
+      margin-top:0;
+    }
+
+    #effacer_score,
+    .labelDeBestScore{
+      width: 200px;
+      margin: 10px;
+    }
+
   }
 
   @media screen and (max-width: 500px) {
@@ -402,4 +454,3 @@ body {
     }
   }
   /* Insérez vos propriétés CSS ici, avec vos sélecteurs*/
-  }

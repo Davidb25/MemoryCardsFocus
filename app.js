@@ -52,9 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
   paramValue = urlParams.get('niveau');
 
   if(paramValue == null) {
-    //niveau = paramValue;
     btnNiveau[0].style.backgroundColor="orange"
-    document.getElementById("rappelBestScore").style.display ="none";
   }
 
   if(paramValue == 8) {
