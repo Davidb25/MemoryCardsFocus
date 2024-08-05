@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memory game</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <p class="titreJeu">MEMORY CARDS <span class="conseil"> Tentez de gagner avec le moins de coups.</span></p>
+
+    <div class="full-height">
+      <div class="grid">
+
+      </div>
+    </div>
+    <div id="containerBtns">
+      <div id="containerBtnsNiveau">
+        <div>
+          <button class="btnNiveau" id="btnDebutant">Nieau 1</button>
+        </div>
+        <div>
+          <button class="btnNiveau" id="btnFacile">Niveau 2</button>
+        </div>
+        <div>
+          <button class="btnNiveau" id="btnMoyen">Niveau 3</button>
+        </div>
+        <div>
+          <button class="btnNiveau" id="btnDifficile">Niveau 4</button>
+        </div>
+      </div>
+      <div id="containerBtnNouvellePartie">
+        <button id="btnNouvellePartie"> Nouvelle partie </button>
+      </div>
+      <div class="score">Nombre de coups : 0</div>
+      <div class="timer">Timer : 0</div>
+      <div id="containerBestScore">
+        <div id="bravoBestScore">
+          <div>Meilleur score</div>
+          <form id="formBestScore" method="post">
+            <div><input class="inputBestScore" id="inputPrenom" type="text" placeholder="prénom" required></div>
+            <div><input class="inputBestScore" id="inputEmail" type="hidden" placeholder="email" required></div>
+            <div><button id="inputValidChampsBestScore" type="submit">Valider</button></div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+    <div id="rappelBestScore">
+      <div class="labelDeBestScore">Meilleur score : <span id="valueBestScore"></span></div>
+      <div class="labelDeBestScore">par : <span id="prenomBestScore"></span></div>
+      <div class="labelDeBestScore">chrono : <span id="chronoBestScore"></span> sec</div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

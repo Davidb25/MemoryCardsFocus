@@ -1,0 +1,257 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: lato, Helvetica, sans-serif;
+  background-image: url("ressources/img/arriere_plan.JPG");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: bottom right;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.timer,
+.score,
+.conseil {
+  text-align: center;
+  color: #f1f1f1;
+}
+
+.titreJeu{
+  text-align: center;
+  color: #0bad49;
+  font-size:35px;
+}
+
+.conseil {
+  font-size: 26px;
+  margin-top: 10px;
+}
+.score {
+  margin-top:60px;
+  font-size: 26px;
+}
+
+.timer {
+  font-size: 26px;
+  margin-top: 15px;
+}
+
+.grid {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(4, 180px);
+  width: 100%;
+  gap: 10px;
+  margin: 30px auto 0;
+}
+
+.card {
+  aspect-ratio: 1/1;
+  perspective: 1000px;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.2s ease-out;
+}
+.card:hover {
+  transform: scale(1.02);
+}
+.double-face {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: transform 0.6s;
+  box-shadow: 0 5px 5px rgba(0,0,0,0.3);
+  pointer-events: none;
+}
+.face,
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  border-radius: 5px;
+  background: #f1f1f1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+.back {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.back:hover {
+  background: gray;
+}
+
+.face {
+  transform: rotateY(180deg);
+}
+.face img {
+  max-width: 100%;
+  max-height:100%;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.back img {
+  width: 70%;
+}
+
+
+.active {
+  transform: rotateY(180deg);
+}
+
+#containerBtns {
+  width: 300px;
+  position: absolute;
+  top:15px;
+  left:15px;
+  display: flex;
+  flex-direction: column;
+}
+
+#containerBtnsNiveau{
+
+}
+
+.btnNiveau {
+  margin:5px;
+  width: 120px;
+  padding:10px;
+  border:solid 3px gray;
+  border-radius:8px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 16px;
+  font-weight: bold;
+  color: rgb(80,80,80)
+}
+
+.btnNiveau:hover {
+  background-color: rgb(150, 150, 150);
+}
+
+#containerBtnNouvellePartie {
+  display: flex;
+  margin-top:15px;
+}
+
+#btnNouvellePartie {
+  margin:5px;
+  width: 200px;
+  padding:10px;
+  border:solid 3px gray;
+  border-radius:8px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 16px;
+  font-weight: bold;
+  color: rgb(80,80,80)
+}
+
+#btnNouvellePartie:hover {
+  background-color: rgb(54, 142, 242);
+}
+
+#containerBestScore{
+  flex-direction: column;
+}
+
+#bravoBestScore{
+  margin-top:15px;
+  text-align: center;
+  font-size: 30px;
+  color:rgb(16, 238, 35);
+}
+
+.inputBestScore {
+  padding:8px;
+  font-size:20px;
+  width: 250px;
+  margin : 10px 0;
+  text-align: center;
+  border-radius: 5px;
+}
+
+#inputValidChampsBestScore{
+  padding:5px 22px;
+  margin: 10px 0;
+  font-size: 16px;
+  border-radius: 5px;
+  border: solid 1px gray;
+  background-color:rgb(196, 196, 196);
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+#inputValidChampsBestScore:hover {
+  background-color:rgb(160, 160, 160);
+}
+
+#rappelBestScore {
+ margin-top:10px;
+ position: absolute;
+ top:15px;
+ right:15px;
+ width: 250px;
+}
+
+.labelDeBestScore{
+  background-color: rgb(246, 246, 98);
+  width: 100%;
+  padding:10px;
+  border-radius:18px;
+  margin-top: 20px;
+  font-size: 20px;
+  color:blue;
+  text-align: center;
+}
+
+.full-height {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+}
+
+
+@media screen and (max-width: 1600px) {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 140px);
+    gap: 10px;
+    margin: 30px auto 0;
+
+  }
+
+  #btnNouvellePartie,
+  .btnNiveau,
+  .inputBestScore{
+    padding: 7px;
+    font-size: 14px;
+  }
+
+  .score{
+    margin-top: 30px;
+
+  }
+
+  .labelDeBestScore{
+    padding: 7px;
+    font-size:20px;
+  }
+  /* Insérez vos propriétés CSS ici, avec vos sélecteurs*/
+  }
