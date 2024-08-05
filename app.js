@@ -243,7 +243,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       }
 
-      timer.textContent = `votre chrono : ${chrono} sec`
+      timer.textContent = `Chrono : ${chrono} sec`
       timer.style.color=""
 
       formBestScore = document.getElementById("formBestScore")
@@ -254,7 +254,7 @@ document.addEventListener('DOMContentLoaded', function () {
       });
 
       conseil.textContent = `Bravo ! Cliquez sur "nouvelle partie" pour recommencer.`
-      score.textContent = `Nb de tentatives : ${numberOfTries}`
+      score.textContent = `Tentatives : ${numberOfTries}`
       return;
     }
     score.textContent = `Tentatives : ${numberOfTries}`

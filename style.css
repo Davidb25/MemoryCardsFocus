@@ -295,7 +295,7 @@ body {
     }
 
     .containerGrid{
-      margin-top: 20px;
+      margin-top: 10px;
     }
 
     .grid {
@@ -332,6 +332,7 @@ body {
     #btnNouvellePartie{
       width: 150px;
       margin-top:10px;
+      background-color:rgb(174, 174, 174);
     }
 
     #containerInfosScores {
