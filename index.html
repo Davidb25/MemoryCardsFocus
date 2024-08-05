@@ -10,33 +10,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   </head>
   <body>
-    <p class="titreJeu">MEMORY CARDS <span class="conseil"> Tentez de gagner avec le moins de coups.</span></p>
-
-    <div class="full-height">
-      <div class="grid">
-
-      </div>
+    <div id="containerTitre">
+      <p id="titreJeu">MEMORY CARDS</p>
+      <p id="conseil"> Tentez de gagner avec le moins de tentatives.</p>
     </div>
     <div id="containerBtns">
       <div id="containerBtnsNiveau">
         <div>
-          <button class="btnNiveau" id="btnDebutant">Nieau 1</button>
+          <button class="btnNiveau" id="btnFacile">Niveau 1</button>
         </div>
         <div>
-          <button class="btnNiveau" id="btnFacile">Niveau 2</button>
+          <button class="btnNiveau" id="btnMoyen">Niveau 2</button>
         </div>
         <div>
-          <button class="btnNiveau" id="btnMoyen">Niveau 3</button>
-        </div>
-        <div>
-          <button class="btnNiveau" id="btnDifficile">Niveau 4</button>
+          <button class="btnNiveau" id="btnDifficile">Niveau 3</button>
         </div>
       </div>
       <div id="containerBtnNouvellePartie">
         <button id="btnNouvellePartie"> Nouvelle partie </button>
       </div>
-      <div class="score">Nombre de coups : 0</div>
-      <div class="timer">Timer : 0</div>
+      <div id="containerInfosScores">
+        <div class="infoScore" id="score">Tentatives : 0</div>
+        <div class="infoScore" id="timer">Timer : 0</div>
+      </div>
       <div id="containerBestScore">
         <div id="bravoBestScore">
           <div>Meilleur score</div>
@@ -47,13 +43,23 @@
           </form>
         </div>
       </div>
+    </div>
+    <div class="containerGrid">
+      <div class="grid">
 
+      </div>
     </div>
-    <div id="rappelBestScore">
-      <div class="labelDeBestScore">Meilleur score : <span id="valueBestScore"></span></div>
-      <div class="labelDeBestScore">par : <span id="prenomBestScore"></span></div>
-      <div class="labelDeBestScore">chrono : <span id="chronoBestScore"></span> sec</div>
-    </div>
+    <div id="containerRappelBestScore">
+      <div id="labelMeilleurScore">
+        <p>Meilleur score</p>
+      </div>
+      <div id="rappelBestScore">
+        <div class="labelDeBestScore">Tentatives : <span id="valueBestScore"></span></div>
+        <div class="labelDeBestScore">par : <span id="prenomBestScore"></span></div>
+        <div class="labelDeBestScore">chrono : <span id="chronoBestScore"></span></div>
+        <div id="effacer_score" class="labelDeBestScore" onclick="effacerScore()">réinitialiser score</div>
+      </div>
+  </div>
     <script src="app.js"></script>
   </body>
 </html>

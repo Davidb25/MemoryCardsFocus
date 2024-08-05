@@ -9,19 +9,23 @@ var alerteTimer;
 var chrono;
 let numberOfTries = 0;
 
-const timer = document.querySelector(".timer")
-const conseil = document.querySelector(".conseil");
+const timer = document.getElementById("timer")
+const conseil = document.getElementById("conseil");
 
 var randomChoiceImage = [];
 
-var valeurCookieBestScoreAdulte = cookieBestScoreExists("cookieBestScoreAdulte")
-var valeurCookiePrenomBestScoreAdulte = cookieBestScoreExists("cookiePrenomBestScoreAdulte")
-var valeurCookieChronoBestScoreAdulte = cookieBestScoreExists("cookieChronoBestScoreAdulte")
+var valeurCookieBestScoreNiveau3 = cookieBestScoreExists("cookieBestScoreNiveau3")
+var valeurCookiePrenomBestScoreNiveau3 = cookieBestScoreExists("cookiePrenomBestScoreNiveau3")
+var valeurCookieChronoBestScoreNiveau3 = cookieBestScoreExists("cookieChronoBestScoreNiveau3")
+
+var valeurCookieBestScoreNiveau2 = cookieBestScoreExists("cookieBestScoreNiveau2")
+var valeurCookiePrenomBestScoreNiveau2 = cookieBestScoreExists("cookiePrenomBestScoreNiveau2")
+var valeurCookieChronoBestScoreNiveau2 = cookieBestScoreExists("cookieChronoBestScoreNiveau2")
 
 
-var valeurCookieBestScoreEnfant = cookieBestScoreExists("cookieBestScoreEnfant")
-var valeurCookiePrenomBestScoreEnfant = cookieBestScoreExists("cookiePrenomBestScoreEnfant")
-var valeurCookieChronoBestScoreEnfant = cookieBestScoreExists("cookieChronoBestScoreEnfant")
+var valeurCookieBestScoreNiveau1 = cookieBestScoreExists("cookieBestScoreNiveau1")
+var valeurCookiePrenomBestScoreNiveau1 = cookieBestScoreExists("cookiePrenomBestScoreNiveau1")
+var valeurCookieChronoBestScoreNiveau1 = cookieBestScoreExists("cookieChronoBestScoreNiveau1")
 
 const listeImages = [
   { nomImage: 'affiche_festival.jpg', nomAttribut: 'affiche_festival' },
@@ -49,49 +53,43 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if(paramValue == null) {
     //niveau = paramValue;
-    btnNiveau[1].style.backgroundColor="orange"
+    btnNiveau[0].style.backgroundColor="orange"
     document.getElementById("rappelBestScore").style.display ="none";
   }
 
   if(paramValue == 8) {
     niveau = paramValue;
     containerBestScore.style.display ="flex";
-    document.getElementById("valueBestScore").textContent = valeurCookieBestScoreAdulte;
-    document.getElementById("prenomBestScore").textContent = valeurCookiePrenomBestScoreAdulte;
-    document.getElementById("chronoBestScore").textContent = valeurCookieChronoBestScoreAdulte;
-    document.getElementById("bravoBestScore").style.visibility = "hidden";
+    document.getElementById("valueBestScore").textContent = valeurCookieBestScoreNiveau3;
+    document.getElementById("prenomBestScore").textContent = valeurCookiePrenomBestScoreNiveau3;
+    document.getElementById("chronoBestScore").textContent = valeurCookieChronoBestScoreNiveau3 + " sec";
+    document.getElementById("bravoBestScore").style.display="none";
     delaiTime = 60;
     alerteTimer = 15;
     timer.textContent = `Timer : ${delaiTime} sec`
-    btnNiveau[3].style.backgroundColor="orange"
+    btnNiveau[2].style.backgroundColor="orange"
   }
   else if(paramValue == 6) {
     niveau = paramValue;
     containerBestScore.style.display ="flex";
-    document.getElementById("valueBestScore").textContent = valeurCookieBestScoreEnfant;
-    document.getElementById("prenomBestScore").textContent = valeurCookiePrenomBestScoreEnfant;
-    document.getElementById("chronoBestScore").textContent = valeurCookieChronoBestScoreEnfant;
-    document.getElementById("bravoBestScore").style.visibility = "hidden";
+    document.getElementById("valueBestScore").textContent = valeurCookieBestScoreNiveau2;
+    document.getElementById("prenomBestScore").textContent = valeurCookiePrenomBestScoreNiveau2;
+    document.getElementById("chronoBestScore").textContent = valeurCookieChronoBestScoreNiveau2 + " sec";
+    document.getElementById("bravoBestScore").style.display="none";
     delaiTime = 45;
     alerteTimer = 10;
     timer.textContent = `Timer : ${delaiTime} sec`
-    btnNiveau[2].style.backgroundColor="orange"
+    btnNiveau[1].style.backgroundColor="orange"
   }
   else if(paramValue == 4) {
     niveau = paramValue;
-    containerBestScore.style.display ="none";
-    document.getElementById("rappelBestScore").style.display ="none";
+    containerBestScore.style.display ="flex";
+    document.getElementById("valueBestScore").textContent = valeurCookieBestScoreNiveau1;
+    document.getElementById("prenomBestScore").textContent = valeurCookiePrenomBestScoreNiveau1;
+    document.getElementById("chronoBestScore").textContent = valeurCookieChronoBestScoreNiveau1 + " sec";
+    document.getElementById("bravoBestScore").style.display="none";
     delaiTime = 20;
     alerteTimer = 8;
-    timer.textContent = `Timer : ${delaiTime} sec`
-    btnNiveau[1].style.backgroundColor="orange"
-  }
-  else if(paramValue == 2){
-    niveau = paramValue;
-    containerBestScore.style.display ="none";
-    document.getElementById("rappelBestScore").style.display ="none";
-    delaiTime = 10;
-    alerteTimer = 4;
     timer.textContent = `Timer : ${delaiTime} sec`
     btnNiveau[0].style.backgroundColor="orange"
   }
@@ -214,7 +212,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   const innerCards = [...document.querySelectorAll(".double-face")];
-  const score = document.querySelector(".score")
+  const score = document.getElementById("score")
 
   function saveNumberOftries(){
     numberOfTries++;
@@ -223,22 +221,30 @@ document.addEventListener('DOMContentLoaded', function () {
 
       window.clearTimeout(lancementChrono); // on arrête le chronomètre
 
-      if(paramValue == 8 && numberOfTries < parseInt(valeurCookieBestScoreAdulte)) {
+      chrono =  delaiTime - timerChrono
 
-        chrono =  delaiTime - timerChrono
+      if(paramValue == 8 && numberOfTries <= parseInt(valeurCookieBestScoreNiveau3)) {
 
-        if(chrono < parseInt(valeurCookieChronoBestScoreAdulte)) {
-        document.getElementById("bravoBestScore").style.visibility = "visible"
+
+        if(chrono < parseInt(valeurCookieChronoBestScoreNiveau3)) {
+        document.getElementById("bravoBestScore").style.display="block"
         }
       }
-      else if (paramValue == 6 && numberOfTries < parseInt(valeurCookieBestScoreEnfant)) {
+      else if (paramValue == 6 && numberOfTries <= parseInt(valeurCookieBestScoreNiveau2)) {
 
-        chrono =  delaiTime - timerChrono
-
-        if(chrono < parseInt(valeurCookieChronoBestScoreEnfant)) {
-        document.getElementById("bravoBestScore").style.visibility = "visible"
+        if(chrono < parseInt(valeurCookieChronoBestScoreNiveau2)) {
+        document.getElementById("bravoBestScore").style.display="block"
         }
       }
+      else if (paramValue == 4 && numberOfTries <= parseInt(valeurCookieBestScoreNiveau1)) {
+
+        if(chrono < parseInt(valeurCookieChronoBestScoreNiveau1)) {
+        document.getElementById("bravoBestScore").style.display="block"
+        }
+      }
+
+      timer.textContent = `votre chrono : ${chrono} sec`
+      timer.style.color=""
 
       formBestScore = document.getElementById("formBestScore")
       formBestScore.addEventListener("submit", function(e) {
@@ -247,46 +253,11 @@ document.addEventListener('DOMContentLoaded', function () {
           document.getElementById("valueBestScore").textContent = numberOfTries
       });
 
-      conseil.textContent = `Bravo ! Appuyez sur "espace" pour relancer une partie.`
-      score.textContent = `Votre score final : ${numberOfTries}`
+      conseil.textContent = `Bravo ! Cliquez sur "nouvelle partie" pour recommencer.`
+      score.textContent = `Nb de tentatives : ${numberOfTries}`
       return;
     }
-    score.textContent = `Nombre de coups : ${numberOfTries}`
-  }
-
-  window.addEventListener("keydown", handleRestart)
-
-  let shuffleLock = false;
-  function handleRestart(e) {
-    //e.preventDefault()
-    if(e.keyCode === 32) {
-      innerCards.forEach(card => card.classList.remove("active"))
-
-      document.getElementById("bravoBestScore").style.visibility = "hidden";
-
-      conseil.textContent = `Tentez de gagner avec le moins d'essais possible.`
-      score.textContent = `Nombre de coups : 0`
-      
-      window.clearTimeout(lancementChrono);
-      timerChrono = delaiTime;
-      firstCard = false;
-
-      cardsPicked = [];
-
-      timer.textContent = `Timer : ${delaiTime} sec`
-      numberOfTries = 0;
-      conseil.style.color= ""
-      timer.style.color= ""
-
-      cards.forEach(card => card.addEventListener("click", flipACard))
-
-      if(shuffleLock) return;
-      shuffleLock = true;
-      setTimeout(() => {
-        shuffleCards()
-        shuffleLock = false;
-      }, 600)
-    }
+    score.textContent = `Tentatives : ${numberOfTries}`
   }
 })
 
@@ -301,13 +272,6 @@ document.getElementById("btnNouvellePartie").addEventListener("click", ()=>
   document.location.href = url +"?niveau=" + niveau
 
 })
-
-document.getElementById("btnDebutant").addEventListener("click", ()=>
-  {
-    var url = document.location.pathname; 
-    document.location.href = url +"?niveau=" + 2
-  }
-)
 
 document.getElementById("btnFacile").addEventListener("click", ()=>
   {
@@ -385,30 +349,30 @@ function setCookie(name, value, days) {
 function validationChampsBestScores() {
 
   var inputPrenom = document.getElementById("inputPrenom").value
-  //var inputEmail = document.getElementById("inputEmail").value
+
+  if(paramValue == 4 ) {
+    setCookie('cookiePrenomBestScoreNiveau1', inputPrenom, 7);
+    setCookie('cookieChronoBestScoreNiveau1', chrono, 7);
+    setCookie('cookieBestScoreNiveau1', numberOfTries, 7);
+  }
 
   if(paramValue == 6 ) {
-    setCookie('cookiePrenomBestScoreEnfant', inputPrenom, 7);
-    //setCookie('cookieEmailBestScoreEnfant', inputEmail, 7);
-    setCookie('cookieChronoBestScoreEnfant', chrono, 7);
-    setCookie('cookieBestScoreEnfant', numberOfTries, 7);
+    setCookie('cookiePrenomBestScoreNiveau2', inputPrenom, 7);
+    setCookie('cookieChronoBestScoreNiveau2', chrono, 7);
+    setCookie('cookieBestScoreNiveau2', numberOfTries, 7);
   }
   else if(paramValue == 8 )  {
-    setCookie('cookiePrenomBestScoreAdulte', inputPrenom, 7);
-    //setCookie('cookieEmailBestScoreAdulte', inputEmail, 7);
-    setCookie('cookieChronoBestScoreAdulte', chrono, 7);
-    setCookie('cookieBestScoreAdulte', numberOfTries, 7);
+    setCookie('cookiePrenomBestScoreNiveau3', inputPrenom, 7);
+    setCookie('cookieChronoBestScoreNiveau3', chrono, 7);
+    setCookie('cookieBestScoreNiveau3', numberOfTries, 7);
   }
 
   document.getElementById("prenomBestScore").textContent = inputPrenom
-  document.getElementById("chronoBestScore").textContent = chrono
+  document.getElementById("chronoBestScore").textContent = chrono + " sec"
 
   inputPrenom ="";
-  inputEmail = "";
 
-  document.getElementById("bravoBestScore").style.visibility = "hidden";
-
-
+  document.getElementById("bravoBestScore").style.display="none";
 }
 
 function executionTimer() {
@@ -422,10 +386,36 @@ function executionTimer() {
   if(timerChrono <= 0) {
     timer.textContent = `Temps écoulé`
     timer.style.color="red"
-    conseil.textContent = `Perdu ! Appuyez sur "espace" pour relancer une partie.`
+    conseil.textContent = `Perdu ! Cliquez sur "nouvelle partie" pour recommencer.`
     conseil.style.color="red"
   }
- 
+}
+
+function effacerScore() {
+
+  if(niveau == 8) {
+    setCookie('cookiePrenomBestScoreNiveau3', "999", 7);
+    setCookie('cookieChronoBestScoreNiveau3', 999, 7);
+    setCookie('cookieBestScoreNiveau3', 999, 7);
+  }
+
+  if(niveau == 6) {
+    setCookie('cookiePrenomBestScoreNiveau2', "999", 7);
+    setCookie('cookieChronoBestScoreNiveau2', 999, 7);
+    setCookie('cookieBestScoreNiveau2', 999, 7);
+  }
+
+  if(niveau == 4) {
+    setCookie('cookiePrenomBestScoreNiveau1', "999", 7);
+    setCookie('cookieChronoBestScoreNiveau1', 999, 7);
+    setCookie('cookieBestScoreNiveau1', 999, 7);
+  }
+
+  document.getElementById("valueBestScore").textContent = 999;
+  document.getElementById("prenomBestScore").textContent = 999;
+  document.getElementById("chronoBestScore").textContent = 999 + " sec";
+
+  location.reload();
 }
 
 

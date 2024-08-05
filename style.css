@@ -17,33 +17,39 @@ body {
   padding: 10px;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
-.timer,
-.score,
-.conseil {
-  text-align: center;
-  color: #f1f1f1;
+#containerTitre{
+  margin-top:10px;
 }
 
-.titreJeu{
+#titreJeu{
   text-align: center;
   color: #0bad49;
   font-size:35px;
 }
 
-.conseil {
+#conseil {
   font-size: 26px;
   margin-top: 10px;
 }
-.score {
+
+#score {
   margin-top:60px;
   font-size: 26px;
 }
 
-.timer {
+#timer {
   font-size: 26px;
   margin-top: 15px;
+}
+
+#timer,
+#score,
+#conseil {
+  text-align: center;
+  color: #f1f1f1;
 }
 
 .grid {
@@ -122,15 +128,17 @@ body {
   left:15px;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 #containerBtnsNiveau{
-
+  display: flex;
+  flex-direction: column;
 }
 
+#btnNouvellePartie
 .btnNiveau {
   margin:5px;
-  width: 120px;
   padding:10px;
   border:solid 3px gray;
   border-radius:8px;
@@ -138,7 +146,11 @@ body {
   transition: 0.3s;
   font-size: 16px;
   font-weight: bold;
-  color: rgb(80,80,80)
+  color: rgb(0, 0, 0)
+}
+
+.btnNiveau {
+  width: 120px;
 }
 
 .btnNiveau:hover {
@@ -151,16 +163,7 @@ body {
 }
 
 #btnNouvellePartie {
-  margin:5px;
   width: 200px;
-  padding:10px;
-  border:solid 3px gray;
-  border-radius:8px;
-  cursor: pointer;
-  transition: 0.3s;
-  font-size: 16px;
-  font-weight: bold;
-  color: rgb(80,80,80)
 }
 
 #btnNouvellePartie:hover {
@@ -176,6 +179,7 @@ body {
   text-align: center;
   font-size: 30px;
   color:rgb(16, 238, 35);
+  border: solid 2px rgb(255, 230, 0);
 }
 
 .inputBestScore {
@@ -202,12 +206,20 @@ body {
   background-color:rgb(160, 160, 160);
 }
 
-#rappelBestScore {
+#containerRappelBestScore {
  margin-top:10px;
  position: absolute;
  top:15px;
  right:15px;
  width: 250px;
+}
+
+#labelMeilleurScore{
+  color: white;
+  font-size:18px;
+  text-align: center;
+  margin: 10px;
+
 }
 
 .labelDeBestScore{
@@ -221,14 +233,24 @@ body {
   text-align: center;
 }
 
-.full-height {
+#effacer_score{
+  background-color: rgb(99, 137, 233);
+  width: 100%;
+  padding:10px;
+  border-radius:18px;
+  margin-top: 20px;
+  font-size: 20px;
+  color:rgb(255, 255, 255);
+  text-align: center;
+  cursor:pointer;
+}
+
+.containerGrid {
   display: flex;
-  flex-grow: 1;
-  align-items: center;
 }
 
 
-@media screen and (max-width: 1600px) {
+@media screen and (max-width: 1230px) {
   .grid {
     display: grid;
     grid-template-columns: repeat(4, 140px);
@@ -252,6 +274,123 @@ body {
   .labelDeBestScore{
     padding: 7px;
     font-size:20px;
+  }
+
+  @media screen and (max-width: 500px) {
+
+    #containerTitre{
+      margin-top:8px;
+    }
+
+    #titreJeu{
+      text-align: center;
+      color: #0bad49;
+      font-size:22px;
+    }
+    
+    #conseil {
+      font-size: 14px;
+      margin-top: 10px;
+    }
+
+    .containerGrid{
+      margin-top: 20px;
+    }
+
+    .grid {
+      display: grid;
+      width: 90vw;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
+      margin: 0 auto 0;
+    }
+
+    #containerBtns{
+      position:relative;
+      left:0;
+      top:0;
+      width:95%;
+      margin-top: 25px;
+    }
+
+    #containerBtnsNiveau {
+      width:100%;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    #btnNouvellePartie,
+    .btnNiveau {
+      font-size:12px;
+      width:80px;
+      padding:5px;
+      border: solid 1px rgb(71, 71, 71);
+      border-radius: 5px;
+    }
+
+    #btnNouvellePartie{
+      width: 150px;
+    }
+
+    #containerInfosScores {
+      width:100%;
+      display: flex;
+      justify-content: space-around;
+      margin-top:25px;
+    }
+
+    #bravoBestScore{
+      font-size:20px;
+    }
+
+    #inputPrenom{
+      width:220px;
+    }
+
+    #inputValidChampsBestScore{
+      font-size:12px;
+    }
+
+    #containerInfosScores #timer,
+    #containerInfosScores #score {
+      font-size:16px;
+      margin-top: 20px;
+      margin: 10px;
+    }
+
+    #containerRappelBestScore {
+      position:relative;
+      top:0;
+      left:0;
+      width: 100%;
+      display: flex;
+      padding:5px;
+      margin-top:20px;
+      margin-bottom:20px;
+      flex-direction: column;
+    }
+
+    #rappelBestScore {
+      width:100%;
+      margin: 0 auto;
+      display:flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    #labelMeilleurScore{
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    #effacer_score,
+    .labelDeBestScore{
+      font-size:14px;
+      width:140px;
+      margin-top:0;
+      margin:8px 5px;
+    }
   }
   /* Insérez vos propriétés CSS ici, avec vos sélecteurs*/
   }
