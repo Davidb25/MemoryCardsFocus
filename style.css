@@ -175,11 +175,12 @@ body {
 }
 
 #bravoBestScore{
-  margin-top:15px;
   text-align: center;
   font-size: 30px;
-  color:rgb(16, 238, 35);
-  border: solid 2px rgb(255, 230, 0);
+  color:rgb(0, 116, 10);
+  padding:10px 20px;
+  border: solid 3px rgb(255, 230, 0);
+  background-color: rgb(201, 201, 201); 
 }
 
 .inputBestScore {
@@ -194,12 +195,13 @@ body {
 #inputValidChampsBestScore{
   padding:5px 22px;
   margin: 10px 0;
-  font-size: 16px;
+  font-size: 20px;
   border-radius: 5px;
-  border: solid 1px gray;
-  background-color:rgb(196, 196, 196);
+  border: solid 1px rgb(255, 255, 255);
+  background-color:rgb(0, 81, 255);
   transition: 0.2s;
   cursor: pointer;
+  color: white;
 }
 
 #inputValidChampsBestScore:hover {
@@ -249,7 +251,6 @@ body {
   display: flex;
 }
 
-
 @media screen and (max-width: 1230px) {
   .grid {
     display: grid;
@@ -285,11 +286,11 @@ body {
     #titreJeu{
       text-align: center;
       color: #0bad49;
-      font-size:22px;
+      font-size:24px;
     }
     
     #conseil {
-      font-size: 14px;
+      font-size: 20px;
       margin-top: 10px;
     }
 
@@ -316,13 +317,13 @@ body {
     #containerBtnsNiveau {
       width:100%;
       flex-direction: row;
-      justify-content: space-between;
+      justify-content: space-around;
     }
 
     #btnNouvellePartie,
     .btnNiveau {
-      font-size:12px;
-      width:80px;
+      font-size:18px;
+      width:90px;
       padding:5px;
       border: solid 1px rgb(71, 71, 71);
       border-radius: 5px;
@@ -330,13 +331,19 @@ body {
 
     #btnNouvellePartie{
       width: 150px;
+      margin-top:10px;
     }
 
     #containerInfosScores {
       width:100%;
       display: flex;
       justify-content: space-around;
-      margin-top:25px;
+      margin-top:10px;
+    }
+
+    #containerBestScore {
+      margin-top:10px;
+      margin-bottom:10px;
     }
 
     #bravoBestScore{
@@ -345,15 +352,16 @@ body {
 
     #inputPrenom{
       width:220px;
+      font-size:16px;
     }
 
     #inputValidChampsBestScore{
-      font-size:12px;
+      font-size:18px;
     }
 
     #containerInfosScores #timer,
     #containerInfosScores #score {
-      font-size:16px;
+      font-size:20px;
       margin-top: 20px;
       margin: 10px;
     }
@@ -365,7 +373,7 @@ body {
       width: 100%;
       display: flex;
       padding:5px;
-      margin-top:20px;
+      margin-top:10px;
       margin-bottom:20px;
       flex-direction: column;
     }
@@ -386,10 +394,10 @@ body {
 
     #effacer_score,
     .labelDeBestScore{
-      font-size:14px;
+      font-size:16px;
       width:140px;
       margin-top:0;
-      margin:8px 5px;
+      margin:5px 5px;
     }
   }
   /* Insérez vos propriétés CSS ici, avec vos sélecteurs*/
