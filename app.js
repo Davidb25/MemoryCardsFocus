@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
   paramValue = urlParams.get('niveau');
 
   if(paramValue == null) {
-    btnNiveau[0].style.backgroundColor="orange"
+    paramValue = 4
   }
 
   if(paramValue == 8) {
@@ -414,6 +414,10 @@ function effacerScore() {
   document.getElementById("chronoBestScore").textContent = 999 + " sec";
 
   location.reload();
+}
+
+function annulerChampsBestScore() {
+  document.getElementById("bravoBestScore").style.display="none";
 }
 
 
