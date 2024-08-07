@@ -1,64 +1,26 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Memory game</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <div id="containerTitre">
-      <p id="titreJeu">MEMORY CARDS</p>
-      <p id="conseil"> Retrouvez toutes les paires.</p>
-    </div>
-    <div id="containerBtns">
-      <div id="containerBtnsNiveau">
-        <div>
-          <button class="btnNiveau" id="btnFacile">niveau 1</button>
-        </div>
-        <div>
-          <button class="btnNiveau" id="btnMoyen">niveau 2</button>
-        </div>
-        <div>
-          <button class="btnNiveau" id="btnDifficile">niveau 3</button>
-        </div>
-      </div>
-      <div id="containerBtnNouvellePartie">
-        <button id="btnNouvellePartie"> nouvelle partie </button>
-      </div>
-      <div id="containerInfosScores">
-        <div class="infoScore" id="score">Tentatives : 0</div>
-        <div class="infoScore" id="timer">Timer : 0</div>
-      </div>
-      <div id="containerBestScore">
-        <div id="bravoBestScore">
-          <div>Meilleur score</div>
-          <form id="formBestScore" method="post">
-            <div><input class="inputBestScore" id="inputPrenom" type="text" placeholder="Entrez votre prénom" required></div>
-            <div><button class="buttonChampsBestScore" id="buttonAnnulerChampsBestScore" type="button" onclick="annulerChampsBestScore()">annuler</button><button class="buttonChampsBestScore" id="buttonValidChampsBestScore" type="submit">valider</button></div>
-          </form>
-        </div>
-      </div>
-    </div>
-    <div class="containerGrid">
-      <div class="grid">
-      </div>
-    </div>
-    <div id="containerRappelBestScore">
-      <div id="labelMeilleurScore">
-        <p>Meilleur score</p>
-      </div>
-      <div id="rappelBestScore">
-        <div class="labelDeBestScore">Tentatives : <span id="valueBestScore"></span></div>
-        <div class="labelDeBestScore">par : <span id="prenomBestScore"></span></div>
-        <div class="labelDeBestScore">chrono : <span id="chronoBestScore"></span></div>
-        <div id="effacer_score" class="labelDeBestScore" onclick="effacerScore()">reset score</div>
-      </div>
-  </div>
-  <div id="realisation">07/2024 - Réalisation par <span><a href="mailto:david.brot@orange.fr"> David Brot </a></span></div>
-    <script src="app.js"></script>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le jeu des jumelles</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <svg id="svg" width="100%" height="100vh">
+
+        <mask id="svgmask3" style="border:solid 4px blue">
+            <circle id="circle1" fill="#ffffff" cx="110" cy="0" r=""></circle>
+            <circle id="circle2" fill="#ffffff" cx="330" cy="0" r=""></circle>
+          </mask>
+
+        <image style="width: 100%;" id="imageBackground" href="" mask="url(#svgmask3)"></image>
+    </svg>
+
+    <div id="changeImage">changer image</div>
+    
+<script src="app.js"></script>
+    
+</body>
 </html>
