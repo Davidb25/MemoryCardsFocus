@@ -183,24 +183,28 @@ body {
   color:rgb(0, 116, 10);
   padding:10px 20px;
   border: solid 3px rgb(255, 230, 0);
-  background-color: rgb(201, 201, 201); 
+  background-color: rgb(201, 201, 201);
+  border-radius: 10px;
 }
 
-.inputBestScore {
+#inputPrenomBestScore {
   padding:8px;
-  font-size:18px;
-  width: 250px;
+  font-size:16px;
+  width: 220px;
   margin : 10px 0;
   text-align: center;
   border-radius: 5px;
   border: solid 1px white; 
 }
 
+#buttonChampsBestScore {
+  margin: 10px 0;
+}
+
 #buttonAnnulerChampsBestScore,
 #buttonValidChampsBestScore{
   padding:5px 22px;
-  margin: 10px 0;
-  font-size: 18px;
+  font-size: 16px;
   border-radius: 5px;
   border: solid 1px rgb(255, 255, 255);
   transition: 0.2s;
@@ -308,22 +312,6 @@ body {
 
     #bravoBestScore{
       padding:7px 12px;
-    }
-
-    /*.inputBestScore {
-      padding: 5px;
-      font-size:16px;
-      width: 170px;
-    }*/
-
-    #inputPrenom{
-      width:200px;
-      font-size:16px;
-    }
-    
-    #buttonAnnulerChampsBestScore,
-    #buttonValidChampsBestScore{
-      font-size:16px;
     }
 
     #containerInfosScores {
@@ -443,16 +431,17 @@ body {
       font-size:20px;
     }
 
-    #inputPrenom{
+    #inputPrenomBestScore{
+      padding:5px;
+      margin:  8px 0;
       width:200px;
       font-size:16px;
     }
 
-    #buttonAnnulerChampsBestScore,
-    #buttonValidChampsBestScore{
-      font-size:16px;
+    #buttonChampsBestScore {
+      margin: 8px 0;
     }
-
+    
     #containerInfosScores #timer,
     #containerInfosScores #score {
       font-size:20px;

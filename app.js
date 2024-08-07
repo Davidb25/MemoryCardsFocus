@@ -346,7 +346,7 @@ function setCookie(name, value, days) {
 
 function validationChampsBestScores() {
 
-  var inputPrenom = document.getElementById("inputPrenom").value
+  var inputPrenom = document.getElementById("inputPrenomBestScore").value
 
   if(paramValue == 4 ) {
     setCookie('cookiePrenomBestScoreNiveau1', inputPrenom, 7);
